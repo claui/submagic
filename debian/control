@@ -1,0 +1,24 @@
+Source: submagic
+# List of sections:
+# admin, cli-mono, comm, database, debug, devel, doc, editors, education,
+# electronics, embedded, fonts, games, gnome, gnu-r, gnustep, graphics,
+# hamradio, haskell, httpd, interpreters, introspection, java, javascript,
+# kde, kernel, libdevel, libs, lisp, localization, mail, math, metapackages,
+# misc, net, news, ocaml, oldlibs, otherosfs, perl, php, python, ruby,
+# rust, science, shells, sound, tasks, tex, text, utils, vcs, video, web,
+# x11, xfce, zope
+Section:
+Priority: optional
+Maintainer: Claudia Pellegrino <clau@tiqua.de>
+Build-Depends: debhelper-compat (= 13), dh-exec, python3-myst-parser, python3-sphinx
+Standards-Version: 4.5.1
+Homepage: https://github.com/claui/submagic
+Vcs-Browser: https://github.com/claui/submagic
+Vcs-Git: https://github.com/claui/submagic.git
+Rules-Requires-Root: no
+
+Package: submagic
+Architecture: all
+Depends: ${misc:Depends}
+Description: Writes stdin into a temp file and then prints the file name
+ This package installs the utility and documentation.

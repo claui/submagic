@@ -1,0 +1,9 @@
+/build/
+/debian/.debhelper/generated/
+/debian/debhelper-build-stamp
+/debian/files
+/debian/submagic/
+/debian/submagic.*.debhelper
+/debian/submagic.substvars
+/.pc/
+*.log

@@ -1,0 +1,9 @@
+#!/usr/bin/dh-exec
+
+# Library files and internal binstubs
+bin/* usr/share/submagic/bin/
+libexec/* usr/share/submagic/libexec/
+share/* usr/share/submagic/share/
+
+# External binstubs
+debian/local/binstub => usr/bin/submagic

@@ -1,0 +1,11 @@
+#!/bin/bash
+set -eu -o pipefail
+pushd "$(dirname -- "${BASH_SOURCE[0]}")/.." > /dev/null
+BASENAME="$(basename -- "${BASH_SOURCE[0]}")"
+
+# shellcheck disable=SC1090
+source "libexec/${BASENAME}.bash"
+
+popd > /dev/null
+shopt -s extglob
+__"${BASENAME//+([^a-z0-9_])/_}" "$@"
