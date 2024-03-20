@@ -8,7 +8,7 @@ foo | submagic | xargs bar
 
 # Description
 
-`submagic` is a tiny utility that redirects stdin into a temp file and then prints the file name of the temporary file.
+`submagic` is a tiny utility that redirects stdin into a temporary file and then prints the full path to that file.
 
 It helps you in situations where you’d like to feed the output of a program `foo` into another program `bar`, but `bar` only accepts a file name as an argument and refuses to work with standard input or Bash’s process substitution.
 
