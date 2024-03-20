@@ -1,3 +1,9 @@
+submagic (0.1.1) UNRELEASED; urgency=medium
+
+  * Add support for custom file names
+
+ -- Claudia Pellegrino <clau@tiqua.de>  Wed, 20 Mar 2024 19:38:27 +0100
+
 submagic (0.1.0) UNRELEASED; urgency=medium
 
   * Initial release
