@@ -1,4 +1,5 @@
 <!-- markdownlint-configure-file { "MD041": { "level": 1 } } -->
+<!-- markdownlint-configure-file { "MD024": { "siblings_only": true } } -->
 
 # Synopsis
 
@@ -31,6 +32,58 @@ Only one flag is supported, `-V`/`--version`, which prints the version number an
 # Return value
 
 The program prints the name of the temporary file after the standard input has been completely written to it.
+
+# Example 1
+
+This example depends on the [`jq`](https://jqlang.github.io/jq/) and
+[`jsonoid`](https://github.com/dataunitylab/jsonoid-discovery/blob/main/README.md) packages.
+
+## With submagic
+
+To feed regular JSON (i.e. JSON input that is not newline-delimited)
+into the `jsonoid` tool:
+
+```bash
+jq -c . input.json | submagic | xargs jsonoid
+```
+
+## Without submagic
+
+Without submagic, you’d have to break your command pipeline into
+two parts because `jsonoid` only accepts files as input:
+
+```bash
+jq -c . input.json > /tmp/annoying.tempfile
+jsonoid /tmp/annoying.tempfile
+```
+
+# Example 2
+
+This example depends on the
+[`0x0uploader`](https://codeberg.org/MorsMortium/0x0uploader)
+package.
+
+## With submagic
+
+To send the systemd journal output of `example.service` directly
+to the [0x0](https://0x0.st) file-hosting service:
+
+```bash
+$ journalctl -u example.service --since='5 min ago' \
+  | submagic x.log \
+  | xargs 0x0uploader
+0x0Uploader: File uploaded, url: https://0x0.st/oaxK.txt
+```
+
+## Without submagic
+
+Without submagic, you’d have to break your command pipeline into
+at least two parts because `0x0uploader` only accepts files:
+
+```bash
+journalctl -u example.service --since='5 min ago' > /tmp/x.log
+0x0uploader /tmp/x.log
+```
 
 # Notes
 

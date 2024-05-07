@@ -3,6 +3,8 @@
 A tiny utility that redirects stdin into a temporary file and then
 prints the full path to that file.
 
+## Why do I need this?
+
 It helps you in situations where you’d like to feed the output of a
 program `foo` into another program `bar`, but `bar` only accepts a
 file name as an argument and refuses to work with standard input or
@@ -19,6 +21,9 @@ if `foo` emits standard output but `bar` only accepts files.
 This is the solution for the question
 [Creating a temporary file from standard input](https://unix.stackexchange.com/q/495254)
 on Unix Stack Exchange.
+
+For practical usage examples, see
+[`USAGE.md`](https://github.com/claui/submagic/blob/main/USAGE.md).
 
 ## Installation
 
